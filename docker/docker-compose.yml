@@ -3,88 +3,88 @@
 version: "3"
 services:
   selenium-hub:
-    image: selenium/hub:3.141.59-20210929
+    image: selenium/hub:4.10.0
     container_name: selenium-hub
     ports:
       - "4444:4444"
 
+
   ch01:
-    image: selenium/node-chrome:3.141.59-20210929
-    volumes:
-      - /dev/shm:/dev/shm
+    image: selenium/node-chrome:114.0
+    shm_size: 2gb
     depends_on:
       - selenium-hub
     environment:
-      - HUB_HOST=selenium-hub
-      - HUB_PORT=4444
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
 
   ch02:
-    image: selenium/node-chrome:3.141.59-20210929
-    volumes:
-      - /dev/shm:/dev/shm
+    image: selenium/node-chrome:114.0
+    shm_size: 2gb
     depends_on:
       - selenium-hub
     environment:
-      - HUB_HOST=selenium-hub
-      - HUB_PORT=4444
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
 
   ch03:
-    image: selenium/node-chrome:3.141.59-20210929
-    volumes:
-      - /dev/shm:/dev/shm
+    image: selenium/node-chrome:114.0
+    shm_size: 2gb
     depends_on:
       - selenium-hub
     environment:
-      - HUB_HOST=selenium-hub
-      - HUB_PORT=4444
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
 
   ch04:
-    image: selenium/node-chrome:3.141.59-20210929
-    volumes:
-      - /dev/shm:/dev/shm
+    image: selenium/node-chrome:114.0
+    shm_size: 2gb
     depends_on:
       - selenium-hub
     environment:
-      - HUB_HOST=selenium-hub
-      - HUB_PORT=4444
-
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
 
   ch05:
-    image: selenium/node-firefox:3.141.59-20210929
-    volumes:
-      - /dev/shm:/dev/shm
+    image: selenium/node-firefox:114.0
+    shm_size: 2gb
     depends_on:
       - selenium-hub
     environment:
-      - HUB_HOST=selenium-hub
-      - HUB_PORT=4444                        
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
 
   ch06:
-    image: selenium/node-firefox:3.141.59-20210929
-    volumes:
-      - /dev/shm:/dev/shm
+    image: selenium/node-firefox:114.0
+    shm_size: 2gb
     depends_on:
       - selenium-hub
     environment:
-      - HUB_HOST=selenium-hub
-      - HUB_PORT=4444                        
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
 
   ch07:
-    image: selenium/node-firefox:3.141.59-20210929
-    volumes:
-      - /dev/shm:/dev/shm
+    image: selenium/node-firefox:114.0
+    shm_size: 2gb
     depends_on:
       - selenium-hub
     environment:
-      - HUB_HOST=selenium-hub
-      - HUB_PORT=4444
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
 
   ch08:
-    image: selenium/node-firefox:3.141.59-20210929
-    volumes:
-      - /dev/shm:/dev/shm
+    image: selenium/node-firefox:114.0
+    shm_size: 2gb
     depends_on:
       - selenium-hub
     environment:
-      - HUB_HOST=selenium-hub
-      - HUB_PORT=4444
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443

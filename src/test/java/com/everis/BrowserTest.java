@@ -29,7 +29,7 @@ public class BrowserTest {
     @ParameterizedTest
     @Tag("ui")
     @CsvFileSource(resources = "/data2.csv", numLinesToSkip = 1)
-    public void testePreenchimentoForm(String p1, String p2, String p3) throws IOException {
+    public void testParallellGoogle(String p1, String p2, String p3) throws IOException {
 
         MutableCapabilities capabilities = initCapabilities(getBrowserName());
         WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
