@@ -15,7 +15,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 /**
- * Exemplo de utilização do Healenium
+ * Exemplo de teste a ser paralelizado
  */
 public class BrowserTest {
 
@@ -48,15 +48,13 @@ public class BrowserTest {
     }
 
     private MutableCapabilities initCapabilities(String oBrowser) {
+        MutableCapabilities options;
         if (oBrowser.equals("chrome")) {
-            ChromeOptions options = new ChromeOptions();
-            options.setHeadless(true); 
-            return options;
+            options = (new ChromeOptions()).setHeadless(true);
         } else {
-            FirefoxOptions options = new FirefoxOptions();
-            options.setHeadless(true); 
-            return options;
+            options = (new FirefoxOptions()).setHeadless(true);
         }
+        return options;
     }
 
 }
