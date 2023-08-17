@@ -21,8 +21,9 @@ public class Utils {
      * @throws IOException
      */
     public static void generateScreenshot(WebDriver driver) throws IOException {
-        Date horaAtual = new Date();
+        Date horaAtual;
         synchronized (Utils.class) {
+            horaAtual = new Date();
             try {
                 Thread.sleep(5);
             } catch (InterruptedException e) {
